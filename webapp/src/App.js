@@ -6,17 +6,17 @@ import axios from 'axios';
 class App extends Component {
 
   fetchUserApi = () => {
-    axios.get("http://localhost:3100")
+    axios.get("/user-api")
     .then( (res) => console.log(res))
   };
   
   fetchTodoApi = () => {
-    axios.get("http://localhost:3200")
+    axios.get("/todo-api")
     .then( (res) => console.log(res))
   };
   
   fetchCoffeeApi = () => {
-    axios.get("http://localhost:3300")
+    axios.get("/coffee-api")
     .then( (res) => console.log(res))
   };
 
