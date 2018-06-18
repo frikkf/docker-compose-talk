@@ -1,4 +1,4 @@
-#Docker Compose talk
+# Docker Compose talk
 
 ## Building large enterprise applications with microservices
 
