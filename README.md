@@ -24,7 +24,7 @@ The number of services increases rapidly
 
 ## Docker Compose comes to the rescue
 - docker-compose.yml
-`
+```
 version: '2'
   services:
     api1: 
@@ -39,7 +39,7 @@ version: '2'
     db2: 
       image: <name>/<appname>:<version>
       ...
-`
+```
 `docker-compose up -d`
 `docker-compose ps`
 `docker-compose down`
