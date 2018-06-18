@@ -11,7 +11,7 @@ services:
     volumes:
       - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
     ports: 
-        - "3000:3000" # open access to port 3000
+        - "3100:3000" # open access to port 3000
     depends_on:
         - mongo # Mongo DB will be started before this app
     environment:
@@ -24,7 +24,7 @@ services:
     volumes:
       - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
     ports: 
-        - "3100:3000" # open access to port 3000
+        - "3200:3000" # open access to port 3000
     depends_on:
         - mongo # Mongo DB will be started before this app
     environment:
@@ -37,7 +37,7 @@ services:
     volumes:
       - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
     ports: 
-        - "3200:3000" # open access to port 3000
+        - "3300:3000" # open access to port 3000
     depends_on:
         - mongo # Mongo DB will be started before this app
     environment:
