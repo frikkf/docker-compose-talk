@@ -28,16 +28,16 @@ The number of services increases rapidly
 version: '2'
   services:
     api1: 
-      image: <name>/<appname>:<version>
+      image: <hub-account>/<appname>:<version>
       ...
     api2: 
-      image: <name>/<appname>:<version> 
+      image: <hub-account>/<appname>:<version> 
       ...
     db1: 
-      image: <name>/<appname>:<version>
+      image: <hub-account>/<appname>:<version>
       ...
     db2: 
-      image: <name>/<appname>:<version>
+      image: <hub-account>/<appname>:<version>
       ...
 ```
 ```
