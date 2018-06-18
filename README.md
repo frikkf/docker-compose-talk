@@ -40,8 +40,10 @@ version: '2'
       image: <name>/<appname>:<version>
       ...
 ```
-`docker-compose up -d`
-`docker-compose ps`
-`docker-compose down`
+```
+  docker-compose up -d
+  docker-compose ps
+  docker-compose down
+```
 
 ## Demo-time!
