@@ -4,44 +4,30 @@ services:
     image: mongo:3.2
     ports:
       - "27017:27017"
-    volumes:
-      - ./.database:/data # Add .database to .gitignore (now database files will be stored in .database)
   todo-api: 
     image: frifos/dc-todo-api:latest
-    volumes:
-      - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
     ports: 
-        - "3100:3000" # open access to port 3000
+        - "3100:3000" # expose port 3100 to outside containers
     depends_on:
-        - mongo # Mongo DB will be started before this app
+        - mongo # Wait for mongo-service to be started before starting this container
     environment:
         - PORT=3000
         - DATABASE_URL=mongodb://mongo/db # Mongo db is available on host 'mongo' in this private network.
-        - DEBUG=*
-    restart: on-failure # restart the app on fail
   user-api: 
-    image: frifos/dc-user-api:latest
-    volumes:
-      - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
+    image: frifos/dc-user-api:v2.5
     ports: 
-        - "3200:3000" # open access to port 3000
+        - "3200:3000" # expose port 3200 to outside containers
     depends_on:
-        - mongo # Mongo DB will be started before this app
+        - mongo # Wait for mongo-service to be started before starting this container
     environment:
         - PORT=3000
         - DATABASE_URL=mongodb://mongo/db # Mongo db is available on host 'mongo' in this private network.
-        - DEBUG=*
-    restart: on-failure # restart the app on fail
   coffee-api: 
-    image: frifos/dc-coffee-api:latest
-    volumes:
-      - ".:/src/app" # current directory on host OS will be mapped as /src/app on the container
+    image: frifos/dc-coffee-api:v1.0.3
     ports: 
-        - "3300:3000" # open access to port 3000
+        - "3300:3000" # expose port 3300 to outside containers
     depends_on:
-        - mongo # Mongo DB will be started before this app
+        - mongo # Wait for mongo-service to be started before starting this container
     environment:
         - PORT=3000
         - DATABASE_URL=mongodb://mongo/db # Mongo db is available on host 'mongo' in this private network.
-        - DEBUG=*
-    restart: on-failure # restart the app on fail
